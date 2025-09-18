@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddharth Srivastava - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+        .container {
+            max-width: 900px;
+        }
+        .section-heading {
+            border-bottom: 2px solid #e5e7eb;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .section-content {
+            display: none;
+        }
+        .section-content.active {
+            display: block;
+        }
+        .arrow-icon {
+            transition: transform 0.3s ease-in-out;
+        }
+        .arrow-icon.active {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="container mx-auto bg-white rounded-xl shadow-lg p-6 md:p-10 lg:p-12">
+
+        <!-- Header -->
+        <header class="text-center mb-8 md:mb-12">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 tracking-tight">Siddharth Srivastava</h1>
+            <p class="text-lg md:text-xl text-gray-500 mt-2">Seasoned Software Developer</p>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-6 mt-4 text-sm text-gray-600">
+                <p><strong>P:</strong> +91 9891006232</p>
+                <p><strong>E:</strong> Srivastavsiddharth3@gmail.com</p>
+                <p><strong>Location:</strong> Delhi-NCR, India</p>
+                <a href="https://www.linkedin.com/in/siddharth-srivastava-b790b714b/" target="_blank" class="hover:underline text-blue-600 font-medium">LinkedIn</a>
+            </div>
+        </header>
+
+        <!-- Summary Section -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold section-heading pb-2 mb-4">Summary</h2>
+            <p class="text-gray-700 leading-relaxed">
+                Seasoned Software Developer with <strong>6+ years</strong> of experience in designing, developing, and delivering production-ready software.
+                Proven ability to apply SDLC best practices and system design principles to create scalable and efficient solutions.
+                Seeking a challenging role where I can leverage my skills to make a significant impact.
+            </p>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold section-heading pb-2 mb-4">Experience</h2>
+            <!-- IT Analyst -->
+            <div class="mb-6">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                    <h3 class="text-xl font-semibold">IT Analyst, Tata Consultancy Services</h3>
+                    <span class="text-gray-500 mt-1 md:mt-0">Sep 2024 - Present</span>
+                </div>
+                <ul class="list-disc pl-5 mt-2 space-y-2 text-gray-700">
+                    <li>Conducted review sessions with the support team to find recurring problems, increasing systems reliability by 25%.</li>
+                    <li>Resolved critical system bugs by conducting thorough root cause analysis, resulting in a 50% decrease in system downtime.</li>
+                    <li>Planned and coordinated with 2 cross-functional teams to enable 98% software and hardware effectiveness in a very tight timeframe.</li>
+                    <li>Implemented a robust issue logging process to track system performance, reducing code re-work efforts by 40%.</li>
+                    <li>Responsible for the welfare and training of 5+ young recruits, ensuring team members were equipped to get the most out of their career.</li>
+                    <li>Brought down the cost of the support team by 40% by properly planning and designing upcoming systems.</li>
+                </ul>
+            </div>
+            <!-- IT Manager -->
+            <div class="mb-6">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                    <h3 class="text-xl font-semibold">IT Manager, Addverb Technologies</h3>
+                    <span class="text-gray-500 mt-1 md:mt-0">Oct 2022 - Sep 2024</span>
+                </div>
+                <ul class="list-disc pl-5 mt-2 space-y-2 text-gray-700">
+                    <li>Conducted review sessions with the support team to find recurring problems, increasing systems reliability by 25%.</li>
+                    <li>Resolved critical system bugs by conducting thorough root cause analysis, resulting in a 50% decrease in system downtime.</li>
+                    <li>Planned and coordinated with 2 cross-functional teams to enable 98% software and hardware effectiveness in a very tight timeframe.</li>
+                    <li>Implemented a robust issue logging process to track system performance, reducing code re-work efforts by 40%.</li>
+                    <li>Responsible for the welfare and training of 5+ young recruits, ensuring team members were equipped to get the most out of their career.</li>
+                    <li>Brought down the cost of the support team by 40% by properly planning and designing upcoming systems.</li>
+                </ul>
+            </div>
+            <!-- Software Engineer, Addverb -->
+            <div class="mb-6">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                    <h3 class="text-xl font-semibold">Software Engineer, Addverb Technologies</h3>
+                    <span class="text-gray-500 mt-1 md:mt-0">Jan 2021 - Oct 2022</span>
+                </div>
+                <ul class="list-disc pl-5 mt-2 space-y-2 text-gray-700">
+                    <li>Developed and worked on an Event-Driven System to assist in optimization of various warehouse processes, resulting in a 10% increase in efficiency and reducing 20% operational cost.</li>
+                    <li>Streamlined the process for documenting and implementing feedback/issues reported in the system, improving efficiency and quality.</li>
+                    <li>Led cross-functional team coordination by analyzing and reviewing client requirements, reducing re-work by 30% after deployment.</li>
+                </ul>
+            </div>
+            <!-- Software Engineer, Airtel -->
+            <div class="mb-6">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                    <h3 class="text-xl font-semibold">Software Engineer, Airtel (NOC)</h3>
+                    <span class="text-gray-500 mt-1 md:mt-0">Jul 2019 - Jan 2021</span>
+                </div>
+                <ul class="list-disc pl-5 mt-2 space-y-2 text-gray-700">
+                    <li>Improved report accuracy by 50% and generation time by 30%, increasing team productivity by 15%.</li>
+                    <li>Automated more than 75% of reports generated manually, reducing 2+ hours per report.</li>
+                    <li>Modified existing application used in report generation processes to streamline daily activity with minimal errors.</li>
+                    <li>Enhanced the existing code base fetching the details of 15+ broadband remote access servers, catering to 4.3 billion customers across India.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skills & Tools Section -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold section-heading pb-2 mb-4">Skills & Tools</h2>
+            <p class="text-gray-700 leading-relaxed">
+                Team Lead, Software Requirement Analysis, Stakeholder Management, Client Handling, Leadership, Backlog Prioritization,
+                Task/Sprint Planning, Peer-to-Peer Code Review, Problem Solving, Supply Chain Optimization, Impact Analysis, Gap Analysis.
+                <br>
+                Java, Spring, MySQL/MsSql, Redis, Docker, Kubernetes, Linux/Ubuntu, NGNIX, Azure, Draw.io, Postman, PuTTY, Jira.
+            </p>
+        </section>
+
+        <!-- Education Section -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold section-heading pb-2 mb-4" onclick="toggleSection('education')">
+                Education
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="arrow-icon w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </h2>
+            <div id="education" class="section-content">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                    <div>
+                        <h3 class="font-semibold text-lg">B.Tech (IT) - SRM Institute of Science & Technology</h3>
+                        <p class="text-gray-700">CGPA: 7.12/10.0</p>
+                    </div>
+                    <span class="text-gray-500 mt-1 md:mt-0">2015 - 2019</span>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                    <div>
+                        <h3 class="font-semibold text-lg">12th Class - Plato Public School</h3>
+                        <p class="text-gray-700">Percentage: 72.1%</p>
+                    </div>
+                    <span class="text-gray-500 mt-1 md:mt-0">2015</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards & Recognition -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold section-heading pb-2 mb-4" onclick="toggleSection('awards')">
+                Awards & Recognition
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="arrow-icon w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </h2>
+            <div id="awards" class="section-content">
+                <ul class="list-disc pl-5 mt-2 space-y-2 text-gray-700">
+                    <li>Appreciation from Head of Operation (South), Hindustan Unilever - April 2023.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Download Button -->
+        <div class="text-center mt-8">
+            <!-- IMPORTANT: Replace the href with the actual URL of your resume PDF file hosted on AWS S3 -->
+            <a href="https://initial-learning-page.s3.ap-south-1.amazonaws.com/Siddharth_Srivastava(v4.1).pdf" target="_blank" download="Siddharth_Srivastava_Resume.pdf" 
+               class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                Download Resume (PDF)
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleSection(id) {
+            const element = document.getElementById(id);
+            const arrow = event.currentTarget.querySelector('.arrow-icon');
+            
+            element.classList.toggle('active');
+            arrow.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
