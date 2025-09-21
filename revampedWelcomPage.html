@@ -45,6 +45,10 @@
         .card:hover {
             transform: translateY(-5px);
         }
+        .form-input {
+            border: 1px solid #9ca3af; /* Darker border color */
+            padding: 0.5rem;
+        }
     </style>
 </head>
 <body class="p-4 md:p-8 bg-[#EDEDED]">
@@ -59,7 +63,7 @@
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 tracking-tight">Siddharth Srivastava</h1>
             <p class="text-lg md:text-xl text-gray-500 mt-2">Software Developer</p>
             <div class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-6 mt-4 text-sm text-gray-600">
-                <p><strong>P:</strong> +91-9891006232</p>
+                <p><strong>P:</strong><a href="#contact" class="hover:underline text-blue-600 font-medium smooth-scroll">Contact Me</a></p>
                 <p><strong>E:</strong><a href="mailto:srivastavsiddharth3@gmail.com" class="hover:underline text-blue-600 font-medium">srivastavsiddharth3@gmail.com</a></p>
                 <p><strong>Location:</strong> Delhi-NCR, India</p>
                 <a href="https://www.linkedin.com/in/siddharthsrivastava" target="_blank" class="hover:underline text-blue-600 font-medium">LinkedIn</a>
@@ -113,10 +117,10 @@
                 <div class="mb-6">
                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
                         <h3 class="text-xl font-semibold">IT Manager, Addverb Technologies</h3>
-                        <span class="text-gray-500 mt-1 md:mt-0">Oct 2022 - Present</span>
+                        <span class="text-gray-500 mt-1 md:mt-0">Oct 2022 - Sep 2024</span>
                     </div>
                     <ul class="list-disc pl-5 mt-2 space-y-2 text-gray-700">
-                        <li>Conducted review sessions with the support team to find recurring problems, increasing systems reliability by 25%.</li>
+                        <li>Conducted review session with support team to find out recurring problems, increasing systems reliability by 25%.</li>
                         <li>Resolved critical system bugs by conducting thorough root cause analysis, resulting in a 50% decrease in system downtime.</li>
                         <li>Planned and coordinated with 2 cross-functional teams to enable 98% software and hardware effectiveness in a very tight timeframe.</li>
                         <li>Implemented a robust issue logging process to track system performance, reducing code re-work efforts by 40%.</li>
@@ -193,10 +197,35 @@
             </div>
         </section>
 
+        <!-- Contact Section -->
+        <section id="contact" class="mb-8 card">
+            <h2 class="text-2xl font-bold pb-2 mb-4" onclick="toggleSection('contact')">Contact</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                If you have a business inquiry or would like to connect, please feel free to reach out using the form below.
+            </p>
+            <form action="#" method="POST" class="space-y-4">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                    <input type="text" id="name" name="name" class="form-input mt-1 block w-full rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm" required>
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" id="email" name="email" class="form-input mt-1 block w-full rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm" required>
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                    <textarea id="message" name="message" rows="4" class="form-input mt-1 block w-full rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm" required></textarea>
+                </div>
+                <div class="text-center mt-8">
+                    <button type="submit" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Send Message</button>
+                </div>
+            </form>
+        </section>
+
         <!-- Download Button -->
         <div class="text-center mt-8">
             <!-- IMPORTANT: Replace the href with the actual URL of your resume PDF file hosted on AWS S3 -->
-            <a href="https://initial-learning-page.s3.ap-south-1.amazonaws.com/Siddharth_Srivastava(v4.1).pdf" target="_blank"
+            <a href="https://your-s3-bucket-name.s3.amazonaws.com/your-resume-file.pdf" target="_blank"
                class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                 Download Resume (PDF)
             </a>
@@ -212,6 +241,18 @@
             element.classList.toggle('active');
             arrow.classList.toggle('active');
         }
+
+        // Smooth scroll for "Contact Me" link
+        document.querySelector('a[href="#contact"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
     </script>
 </body>
 </html>
