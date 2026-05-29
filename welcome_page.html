@@ -21,16 +21,77 @@
             background-color: #ffffff;
             border-radius: 16px; /* Slightly more rounded corners */
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Stronger shadow */
-            padding: 2.5rem;
+            padding: 1.5rem;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        @media (min-width: 768px) {
+            .card {
+                padding: 2.5rem;
+            }
         }
         .card:hover {
             transform: translateY(-3px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
+
+        /* Mobile Responsive Adjustments */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .nav-links.mobile-open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                border-bottom: 1px solid #e5e7eb;
+                padding: 1rem;
+                gap: 0.5rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .nav-links a {
+                padding: 0.5rem;
+                display: block;
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .nav-links {
+                display: flex !important;
+            }
+            .menu-toggle {
+                display: none !important;
+            }
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
         .form-input {
             border: 1px solid #d1d5db;
             padding: 0.75rem;
+        }
+
+        /* Mobile font size adjustments */
+        @media (max-width: 640px) {
+            h2 {
+                font-size: 1.5rem !important;
+            }
+            h3 {
+                font-size: 1rem !important;
+            }
+            p {
+                font-size: 0.9375rem;
+            }
         }
 
         /* Accordion styles (kept for Education/Awards) */
@@ -136,7 +197,12 @@
     <nav class="sticky top-0 z-50 bg-white shadow-md">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
             <a href="#" class="text-xl font-extrabold text-blue-600 tracking-tight">Siddharth S.</a>
-            <div class="flex space-x-6">
+            <button class="menu-toggle md:hidden" onclick="toggleMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+            <div id="nav-links" class="nav-links flex space-x-6">
                 <a href="#about-me-section" class="text-gray-600 hover:text-blue-600 transition duration-150">About</a>
                 <a href="#experience-section" class="text-gray-600 hover:text-blue-600 transition duration-150">Experience</a>
                 <a href="#contact-section" class="text-gray-600 hover:text-blue-600 transition duration-150">Contact</a>
@@ -145,16 +211,16 @@
         </div>
     </nav>
 
-    <div class="container mx-auto p-4 md:p-8">
+    <div class="container mx-auto p-3 sm:p-4 md:p-8">
 
         <!-- Hero Section (Upgraded Header) -->
-        <header id="hero" class="text-center mb-12 py-16 md:py-24 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-2xl shadow-2xl">
-            <div class="relative w-36 h-36 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-xl transform transition duration-500 hover:scale-105">
+        <header id="hero" class="text-center mb-8 md:mb-12 py-8 md:py-24 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-2xl shadow-2xl">
+            <div class="relative w-24 h-24 md:w-36 md:h-36 mx-auto mb-4 md:mb-6 rounded-full overflow-hidden border-4 border-white shadow-xl transform transition duration-500 hover:scale-105">
                 <img src="https://placehold.co/144x144/ffffff/4f46e5?text=SS" alt="Siddharth Srivastava" class="w-full h-full object-cover">
             </div>
-            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tighter">Siddharth Srivastava</h1>
-            <p class="text-xl md:text-2xl font-light mt-3">Senior Software Developer | System Design Enthusiast</p>
-            <div class="flex flex-wrap justify-center items-center space-x-4 md:space-x-8 mt-6 text-sm md:text-base font-medium">
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter">Siddharth Srivastava</h1>
+            <p class="text-base md:text-xl lg:text-2xl font-light mt-2 md:mt-3">Senior Software Developer | System Design Enthusiast</p>
+            <div class="flex flex-col md:flex-row flex-wrap justify-center items-center gap-2 md:gap-4 md:space-x-4 lg:space-x-8 mt-4 md:mt-6 text-xs md:text-sm lg:text-base font-medium px-4">
                 <p>+91-9891006232</p>
                 <a href="mailto:srivastavsiddharth3@gmail.com" class="hover:underline hover:text-gray-200">srivastavsiddharth3@gmail.com</a>
                 <p>Delhi-NCR, India</p>
@@ -162,10 +228,10 @@
         </header>
         
         <!-- Main Content Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-8">
             
             <!-- Column 1: About Me, Core Tools, Education, Awards, Download -->
-            <div class="lg:col-span-1 space-y-8">
+            <div class="lg:col-span-1 space-y-4 md:space-y-8">
                 
                 <section id="about-me-section" class="card">
                     <h2 class="text-3xl font-bold mb-4 text-gray-800 border-b pb-2">About Me</h2>
@@ -255,7 +321,7 @@
             </div>
 
             <!-- Column 2 & 3: Skills, then Experience (Main Content) -->
-            <div class="lg:col-span-2 space-y-8">
+            <div class="lg:col-span-2 space-y-4 md:space-y-8">
                 
                 <!-- SKILLS & TOOLS CARD HERE -->
                 <section id="skills-tools-section" class="card">
@@ -392,11 +458,16 @@
     </div>
 
     <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('mobile-open');
+        }
+
         function toggleSection(id) {
             const element = document.getElementById(id);
             // We use event.currentTarget because the onclick is on the parent heading
             const arrow = event.currentTarget.querySelector('.arrow-icon');
-            
+
             element.classList.toggle('active');
             arrow.classList.toggle('active');
         }
@@ -405,6 +476,10 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
+                // Close mobile menu if open
+                const navLinks = document.getElementById('nav-links');
+                navLinks.classList.remove('mobile-open');
+
                 const targetId = this.getAttribute('href').substring(1);
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {
